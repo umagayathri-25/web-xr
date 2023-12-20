@@ -67,9 +67,10 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       arObject.visible = false;
       scene.addNode(arObject);
 
-      let flower = new Gltf2Node({url: 'media/gltf/chair/chair.gltf'});
+      let flower = new Gltf2Node({url: 'media/gltf/sunflower/sunflower.gltf'});
       arObject.addNode(flower);
-
+      let chair=new GltfNode({url: 'media/gltf/chair/chair.gltf'});
+     arObject.addNode(chair);
       let reticle = new Gltf2Node({url: 'media/gltf/reticle/reticle1.gltf'});
       reticle.visible = false;
       scene.addNode(reticle);
@@ -82,6 +83,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
       const MAX_FLOWERS = 30;
       let flowers = [];
+      const MAX_CHAIR = 30;
+      let chair = [];
 
       // Ensure the background is transparent for AR.
       scene.clear = false;
