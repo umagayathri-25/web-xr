@@ -93,28 +93,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
       // Ensure the background is transparent for AR.
       scene.clear = false;
-      function loadARContent() {
-    // Get the selected image name from the user input or any other source
-    const imageName = 'headset.jpg'; // You can replace this with user input or other logic
-
-    // Clear existing nodes in arObject
-    arObject.clearNodes();
-
-    // Use the imageName to determine which image to display
-    if (imageName === 'flower.jpg') {
-        // Display image 1
-        arObject.addNode(new Gltf2Node({ url: 'media/gltf/flower/flower.gltf' }));
-    } else if (imageName === 'headset.jpg') {
-        // Display image 2
-        arObject.addNode(new Gltf2Node({ url: 'media/gltf/headset/headset.gltf' }));
-    } else if (imageName === 'sponza.jpg') {
-        // Display image 3
-        arObject.addNode(new Gltf2Node({ url: 'media/gltf/sponza/sponza.gltf' }));
-    } else {
-        // Handle the case when the image name is not recognized
-        console.error('Invalid image name:', imageName);
-    }
-}
+      
 
 
       function initXR() {
@@ -246,13 +225,24 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
       // Start the XR application.
       initXR();
-   function loadARContent() {
-    // Clear existing nodes in arObject
-    arObject.clearNodes();
+  const urlParams = new URLSearchParams(window.location.search);
+const imageName = urlParams.get('image');
 
-    // Display a known working model
+// Use the imageName to determine which image to display
+if (imageName === 'flower.jpg') {
+    // Display image 1
     arObject.addNode(new Gltf2Node({ url: 'media/gltf/flower/flower.gltf' }));
+} else if (imageName === 'headset.jpg') {
+    // Display image 2
+    arObject.addNode(new Gltf2Node({ url: 'media/gltf/headset/headset.gltf' }));
+} else if (imageName === 'sponza.jpg') {
+    // Display image 3
+    arObject.addNode(new Gltf2Node({ url: 'media/gltf/sponza/sponza.gltf' }));
+} else {
+    // Handle the case when the image name is not recognized
+    console.error('Invalid image name:', imageName);
 }
+
 
     </script>
 </body>
