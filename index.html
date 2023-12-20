@@ -70,10 +70,13 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       scene.addNode(arObject);
 
       let flower = new Gltf2Node({url: 'media/gltf/sunflower/sunflower.gltf'});
-      let flower = new Gltf2Node({url: 'media/gltf/headset/sunflower.gltf'});
-      let flower = new Gltf2Node({url: 'media/gltf/sandal/sunflower.gltf'});
-      let flower = new Gltf2Node({url: 'media/gltf/space/sunflower.gltf'});
+      let  headset= new Gltf2Node({url: 'media/gltf/headset/headset.gltf'});
+      let sponza = new Gltf2Node({url: 'media/gltf/sponza/sponza.gltf'});
+      let space = new Gltf2Node({url: 'media/gltf/space/space.gltf'});
       arObject.addNode(flower);
+      arObject.addNode(headset);
+      arObject.addNode(sponza);
+      arObject.addNode(space);
      
       let reticle = new Gltf2Node({url: 'media/gltf/reticle/reticle1.gltf'});
       reticle.visible = false;
@@ -225,15 +228,15 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 const imageName = urlParams.get('image');
 
 // Use the imageName to determine which image to display
-if (imageName === 'flower1.jpg') {
+if (imageName === 'flower.jpg') {
     // Display image 1
-     arObject.addNode(new Gltf2Node({url: 'media/gltf/headset/headset.gltf'}));
-} else if (imageName === 'image2.jpg') {
+     arObject.addNode(new Gltf2Node({url: 'media/gltf/flower/flower.gltf'}));
+} else if (imageName === 'headset.jpg') {
     // Display image 2
-    // Example: arObject.addNode(new Gltf2Node({url: 'path/to/image2.gltf'}));
-} else if (imageName === 'image3.jpg') {
+  arObject.addNode(new Gltf2Node({url: 'media/gltf/headset/headset.gltf'}));
+} else if (imageName === 'sponza.jpg') {
     // Display image 3
-    // Example: arObject.addNode(new Gltf2Node({url: 'path/to/image3.gltf'}));
+    Example: arObject.addNode(new Gltf2Node({url: 'media/gltf/sponza/sponza.gltf'}));
 } else {
     // Handle the case when the image name is not recognized
     console.error('Invalid image name:', imageName);
