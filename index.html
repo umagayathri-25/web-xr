@@ -225,22 +225,22 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       // Start the XR application.
       initXR();
     const urlParams = new URLSearchParams(window.location.search);
-const imageName = urlParams.get('image');
+      const imageName = urlParams.get('image');
 
-// Use the imageName to determine which image to display
-if (imageName === 'flower.jpg') {
-    // Display image 1
-     arObject.addNode(new Gltf2Node({url: 'media/gltf/flower/flower.gltf'}));
-} else if (imageName === 'headset.jpg') {
-    // Display image 2
-  arObject.addNode(new Gltf2Node({url: 'media/gltf/headset/headset.gltf'}));
-} else if (imageName === 'sponza.jpg') {
-    // Display image 3
-    Example: arObject.addNode(new Gltf2Node({url: 'media/gltf/sponza/sponza.gltf'}));
-} else {
-    // Handle the case when the image name is not recognized
-    console.error('Invalid image name:', imageName);
-}
+      // Use the imageName to determine which image to display
+      if (imageName === 'flower.jpg') {
+        // Display image 1
+        arObject.addNode(new Gltf2Node({ url: 'media/gltf/flower/flower.gltf' }));
+      } else if (imageName === 'headset.jpg') {
+        // Display image 2
+        arObject.addNode(new Gltf2Node({ url: 'media/gltf/headset/headset.gltf' }));
+      } else if (imageName === 'sponza.jpg') {
+        // Display image 3
+        arObject.addNode(new Gltf2Node({ url: 'media/gltf/sponza/sponza.gltf' }));
+      } else {
+        // Handle the case when the image name is not recognized
+        console.error('Invalid image name:', imageName);
+      }
     </script>
   </body>
 </html>
