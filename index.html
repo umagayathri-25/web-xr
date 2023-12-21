@@ -75,7 +75,26 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       let sponza = new Gltf2Node({url: 'media/gltf/sponza/sponza.gltf'});
       let space = new Gltf2Node({url: 'media/gltf/space/space.gltf'});
 
-        function loadARContent() {
+        
+     
+      let reticle = new Gltf2Node({url: 'media/gltf/reticle/reticle1.gltf'});
+      reticle.visible = false;
+      scene.addNode(reticle);
+
+      // Having a really simple drop shadow underneath an object helps ground
+      // it in the world without adding much complexity.
+      let shadow = new DropShadowNode();
+      vec3.set(shadow.scale, 0.15, 0.15, 0.15);
+      arObject.addNode(shadow);
+
+      const MAX_FLOWERS = 30;
+      let flowers = [];
+      
+
+      // Ensure the background is transparent for AR.
+      scene.clear = false;
+      
+function loadARContent() {
             // Get the selected image name from the user input or any other source
             const imageName = 'flower.jpg'; // You can replace this with user input or other logic
 
@@ -97,25 +116,6 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
                 console.error('Invalid image name:', imageName);
             }
         }
-     
-      let reticle = new Gltf2Node({url: 'media/gltf/reticle/reticle1.gltf'});
-      reticle.visible = false;
-      scene.addNode(reticle);
-
-      // Having a really simple drop shadow underneath an object helps ground
-      // it in the world without adding much complexity.
-      let shadow = new DropShadowNode();
-      vec3.set(shadow.scale, 0.15, 0.15, 0.15);
-      arObject.addNode(shadow);
-
-      const MAX_FLOWERS = 30;
-      let flowers = [];
-      
-
-      // Ensure the background is transparent for AR.
-      scene.clear = false;
-      
-
 
       function initXR() {
         xrButton = new WebXRButton({
