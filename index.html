@@ -231,9 +231,9 @@ const urlParams = new URLSearchParams(window.location.search);
 const imageName = urlParams.get('image');
 
 // Use the imageName to determine which image to display
-if (imageName === 'flower.jpg') {
+if (imageName === 'sponza.jpg') {
     // Display image 1
-    arObject.addNode(new Gltf2Node({ url: 'media/gltf/sunflower/sunflower.gltf' }));
+    arObject.addNode(new Gltf2Node({url: 'media/gltf/sponza/sponza.gltf'}));
 
 } else if (imageName === 'headset.jpg') {
     // Display image 2
