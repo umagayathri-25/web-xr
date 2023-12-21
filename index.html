@@ -85,10 +85,7 @@ if (imageName === 'flower.jpg') {
 } else if (imageName === 'headset.jpg') {
     // Display image 2
     arObject.addNode({ url: 'media/gltf/headset/headset.gltf' }));
-} else if (imageName === 'sponza.jpg') {
-    // Display image 3
-    arObject.addNode({ url: 'media/gltf/sponza/sponza.gltf' }));
-} else {
+}  else {
     // Handle the case when the image name is not recognized
     console.error('Invalid image name:', imageName);
 }
@@ -242,25 +239,9 @@ if (imageName === 'flower.jpg') {
       initXR();
 
 
-const urlParams = new URLSearchParams(window.location.search);
-const imageName = urlParams.get('image');
 
-if (imageName === 'flower.jpg') {
-    // Display image 1
-    addARObjectAt(flower.matrix);
-} else if (imageName === 'headset.jpg') {
-    // Display image 2
-    addARObjectAt(headset.matrix);
-} else if (imageName === 'sponza.jpg') {
-    // Display image 3
-    addARObjectAt(sponza.matrix);
-} else if (imageName === 'space.jpg') {
-    // Display image 4
-    addARObjectAt(space.matrix);
-} else {
-    // Handle the case when the image name is not recognized
-    console.error('Invalid image name:', imageName);
-}
+
+
 
 
 
